@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    #input_video
+    {
+        transform: rotateY(180deg);
+        -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+        -moz-transform:rotateY(180deg); /* Firefox */
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="container">
+        <center> 
+           
+	<table>
+        <tr>
+            <td valign="top">
+                <table border="0" width="50%">
+                    <tr>
+                    <td width="50%" align="center">
+                        <canvas id="output_canvas" class="output_canvas" width="480px" height="480px"></canvas>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="center">
+                            <canvas id="output_canvas2" class="output_canvas2" width="480px" height="480px" style="visibility:hidden;"></canvas>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td width="50%" align="center">
+                        <video id="input_video" class="input_video" style="visibility:hidden;"></video>
+                    </td>
+                    </tr>
+                </table>
+
+            </td>
+            <td valign="top">
+                <form id="myForm" method="POST">
+       
+                    Welcome to AI-Bookstore
+                    <br>
+                    <br>
+                    We would like to recommend the latest publications 
+                    <br>
+                    of your choice that you might not aware of.
+                    <br>
+                    <br>
+                    We wish you like this recommendation.
+                    <br>
+                    <input type="number" id="age" name="age" min="1" max="99" style="visibility:hidden;">
+                    <input type="number" id="gender" name="gender" min="0" max="1" style="visibility:hidden;">
+                    <input type="submit" style="visibility:hidden;">
+                    <br>
+                    <img src="{{ href2 }}"  width="200">
+                    <br>
+                    <label>{{ href3 }} </label>
+                </form> 
+
+
+            </td>
+
+
+        </tr>
+
+
+    </table>
+	
+    </center>
+  </div>
+ 
+  <script type="text/javascript" src="static/hands_box.js"></script>
+  <script>
+  function onOpenCvReady() {
+	  
+  }
+  </script>
+  <script async src="static/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</body>
+</html>
